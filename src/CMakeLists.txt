@@ -1,0 +1,105 @@
+add_executable(bison)
+
+set(dir "${Bison_DIR}/src")
+
+target_sources(
+  bison
+  PRIVATE
+    ${dir}/AnnotationList.c
+    ${dir}/AnnotationList.h
+    ${dir}/InadequacyList.c
+    ${dir}/InadequacyList.h
+    ${dir}/Sbitset.c
+    ${dir}/Sbitset.h
+    ${dir}/assoc.c
+    ${dir}/assoc.h
+    ${dir}/closure.c
+    ${dir}/closure.h
+    ${dir}/complain.c
+    ${dir}/complain.h
+    ${dir}/conflicts.c
+    ${dir}/conflicts.h
+    ${dir}/counterexample.c
+    ${dir}/counterexample.h
+    ${dir}/derivation.c
+    ${dir}/derivation.h
+    ${dir}/derives.c
+    ${dir}/derives.h
+    ${dir}/files.c
+    ${dir}/files.h
+    ${dir}/fixits.c
+    ${dir}/fixits.h
+    ${dir}/flex-scanner.h
+    ${dir}/getargs.c
+    ${dir}/getargs.h
+    ${dir}/glyphs.c
+    ${dir}/glyphs.h
+    ${dir}/gram.c
+    ${dir}/gram.h
+    ${dir}/graphviz.c
+    ${dir}/graphviz.h
+    ${dir}/ielr.c
+    ${dir}/ielr.h
+    ${dir}/lalr.c
+    ${dir}/lalr.h
+    ${dir}/location.c
+    ${dir}/location.h
+    ${dir}/lr0.c
+    ${dir}/lr0.h
+    ${dir}/lssi.c
+    ${dir}/lssi.h
+    ${dir}/main.c
+    ${dir}/muscle-tab.c
+    ${dir}/muscle-tab.h
+    ${dir}/named-ref.c
+    ${dir}/named-ref.h
+    ${dir}/nullable.c
+    ${dir}/nullable.h
+    ${dir}/output.c
+    ${dir}/output.h
+    #${dir}/parse-gram.y
+    ${dir}/parse-gram.c
+    ${dir}/parse-simulation.c
+    ${dir}/parse-simulation.h
+    ${dir}/print-graph.c
+    ${dir}/print-graph.h
+    ${dir}/print-xml.c
+    ${dir}/print-xml.h
+    ${dir}/print.c
+    ${dir}/print.h
+    ${dir}/reader.c
+    ${dir}/reader.h
+    ${dir}/reduce.c
+    ${dir}/reduce.h
+    ${dir}/relation.c
+    ${dir}/relation.h
+    ${dir}/scan-code-c.c
+    ${dir}/scan-code.h
+    ${dir}/scan-gram-c.c
+    ${dir}/scan-gram.h
+    ${dir}/scan-skel-c.c
+    ${dir}/scan-skel.h
+    ${dir}/state.c
+    ${dir}/state.h
+    ${dir}/state-item.c
+    ${dir}/state-item.h
+    ${dir}/strversion.c
+    ${dir}/strversion.h
+    ${dir}/symlist.c
+    ${dir}/symlist.h
+    ${dir}/symtab.c
+    ${dir}/symtab.h
+    ${dir}/system.h
+    ${dir}/tables.c
+    ${dir}/tables.h
+    ${dir}/uniqstr.c
+    ${dir}/uniqstr.h
+)
+
+target_link_libraries(bison PRIVATE Bison::configuration)
+
+install(
+  TARGETS bison
+  RUNTIME
+    DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
